@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "Pcs",
+        "Kg",
+        "Ltr",
+        "Mtr",
+        "Box",
+        "Pack",
+        "Dozen",
+        "Pair",
+        "Set",
+        "Other"
+      ]
+    },
+    "purchase_price": {
+      "type": "number"
+    },
+    "selling_price": {
+      "type": "number"
+    },
+    "mrp": {
+      "type": "number"
+    },
+    "tax_percent": {
+      "type": "number",
+      "default": 18
+    },
+    "hsn_sac_code": {
+      "type": "string"
+    },
+    "stock_quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "min_stock_alert": {
+      "type": "number",
+      "default": 10
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "expiry_date": {
+      "type": "string"
+    },
+    "is_service": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [],
+  "name": "Product"
+}

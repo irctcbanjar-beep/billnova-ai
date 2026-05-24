@@ -1,0 +1,163 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_phone": {
+      "type": "string"
+    },
+    "customer_email": {
+      "type": "string"
+    },
+    "customer_gst": {
+      "type": "string"
+    },
+    "customer_address": {
+      "type": "string"
+    },
+    "invoice_number": {
+      "type": "string"
+    },
+    "invoice_date": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "hsn_sac": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "discount_percent": {
+            "type": "number"
+          },
+          "tax_percent": {
+            "type": "number"
+          },
+          "cgst": {
+            "type": "number"
+          },
+          "sgst": {
+            "type": "number"
+          },
+          "igst": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "discount_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "cgst_total": {
+      "type": "number",
+      "default": 0
+    },
+    "sgst_total": {
+      "type": "number",
+      "default": 0
+    },
+    "igst_total": {
+      "type": "number",
+      "default": 0
+    },
+    "tax_total": {
+      "type": "number",
+      "default": 0
+    },
+    "total": {
+      "type": "number"
+    },
+    "amount_paid": {
+      "type": "number",
+      "default": 0
+    },
+    "balance_due": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Sent",
+        "Paid",
+        "Partially Paid",
+        "Overdue",
+        "Cancelled"
+      ],
+      "default": "Draft"
+    },
+    "payment_mode": {
+      "type": "string",
+      "enum": [
+        "Cash",
+        "UPI",
+        "Bank Transfer",
+        "Card",
+        "Cheque",
+        "Online",
+        "Other"
+      ]
+    },
+    "payment_date": {
+      "type": "string"
+    },
+    "upi_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "terms": {
+      "type": "string"
+    },
+    "is_interstate": {
+      "type": "boolean",
+      "default": false
+    },
+    "qr_code_url": {
+      "type": "string"
+    },
+    "pdf_url": {
+      "type": "string"
+    }
+  },
+  "required": [],
+  "name": "Invoice"
+}

@@ -1,0 +1,107 @@
+{
+  "type": "object",
+  "properties": {
+    "business_name": {
+      "type": "string"
+    },
+    "gst_number": {
+      "type": "string"
+    },
+    "pan_number": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "pincode": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "logo_url": {
+      "type": "string"
+    },
+    "signature_url": {
+      "type": "string"
+    },
+    "business_type": {
+      "type": "string",
+      "enum": [
+        "Sole Proprietorship",
+        "Partnership",
+        "Private Limited",
+        "Public Limited",
+        "LLP",
+        "Other"
+      ]
+    },
+    "subscription_plan": {
+      "type": "string",
+      "enum": [
+        "Free",
+        "Starter",
+        "Pro",
+        "Enterprise"
+      ],
+      "default": "Free"
+    },
+    "subscription_status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Trial",
+        "Expired"
+      ],
+      "default": "Trial"
+    },
+    "trial_ends_at": {
+      "type": "string"
+    },
+    "bank_name": {
+      "type": "string"
+    },
+    "bank_account": {
+      "type": "string"
+    },
+    "bank_ifsc": {
+      "type": "string"
+    },
+    "upi_id": {
+      "type": "string"
+    },
+    "invoice_prefix": {
+      "type": "string"
+    },
+    "invoice_counter": {
+      "type": "number",
+      "default": 1
+    },
+    "currency": {
+      "type": "string",
+      "default": "INR"
+    },
+    "financial_year": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [],
+  "name": "Business"
+}

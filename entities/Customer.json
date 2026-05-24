@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "gst_number": {
+      "type": "string"
+    },
+    "pan_number": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "pincode": {
+      "type": "string"
+    },
+    "customer_type": {
+      "type": "string",
+      "enum": [
+        "Individual",
+        "Business",
+        "Government"
+      ]
+    },
+    "credit_limit": {
+      "type": "number"
+    },
+    "outstanding_balance": {
+      "type": "number",
+      "default": 0
+    },
+    "total_purchases": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [],
+  "name": "Customer"
+}

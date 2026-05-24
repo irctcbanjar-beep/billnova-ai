@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "properties": {
+    "business_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Fuel",
+        "Electricity",
+        "Salary",
+        "Internet",
+        "Rent",
+        "Marketing",
+        "Office Supplies",
+        "Travel",
+        "Maintenance",
+        "GST/Tax",
+        "Bank Charges",
+        "Other"
+      ]
+    },
+    "vendor_name": {
+      "type": "string"
+    },
+    "vendor_gst": {
+      "type": "string"
+    },
+    "expense_date": {
+      "type": "string"
+    },
+    "payment_mode": {
+      "type": "string",
+      "enum": [
+        "Cash",
+        "UPI",
+        "Bank Transfer",
+        "Card",
+        "Cheque",
+        "Other"
+      ]
+    },
+    "receipt_url": {
+      "type": "string"
+    },
+    "tax_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "is_gst_expense": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected"
+      ],
+      "default": "Approved"
+    }
+  },
+  "required": [],
+  "name": "Expense"
+}
