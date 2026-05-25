@@ -47,13 +47,32 @@ function LoginPage({ onLogin }) {
     setLoading(true);
     setError('');
     try {
+      let user;
       if (isRegister) {
-        await base44.auth.register({ email, password });
+        user = await base44.auth.register({ email, password });
+      } else {
+        user = await base44.auth.login({ email, password });
       }
-      const user = await base44.auth.login({ email, password });
       onLogin(user);
     } catch (err) {
-      setError(err.message || 'Authentication failed. Please try again.');
+      // Fallback: try alternative auth method names if login is unavailable
+      try {
+        let user;
+        if (isRegister) {
+          user = await base44.auth.signUp?.({ email, password }) ||
+                 await base44.auth.createUser?.({ email, password });
+        } else {
+          user = await base44.auth.signIn?.({ email, password }) ||
+                 await base44.auth.loginWithPassword?.({ email, password });
+        }
+        if (user) {
+          onLogin(user);
+        } else {
+          throw new Error(err.message || 'Authentication failed');
+        }
+      } catch (err2) {
+        setError(err2.message || err.message || 'Authentication failed. Please try again.');
+      }
     }
     setLoading(false);
   };
@@ -156,7 +175,11 @@ export default function App() {
   const handleLogin = (u) => setUser(u);
 
   const handleLogout = async () => {
-    await base44.auth.logout();
+    try {
+      await base44.auth.logout();
+    } catch (e) {
+      // ignore
+    }
     setUser(null);
   };
 
